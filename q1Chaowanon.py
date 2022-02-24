@@ -10,6 +10,7 @@ class Simple_drawing_window(QWidget):
         self.rabbit = QPixmap("images/rabbit.png")
         self.drone = QPixmap("images/drone.jpeg")
         self.logo = QPixmap("images/logo.jpg")
+        self.noot = QPixmap("images/Nootfly.gif")
  
     def paintEvent(self, e):
         p = QPainter()
@@ -18,6 +19,7 @@ class Simple_drawing_window(QWidget):
         p.drawPixmap(QRect(200, 100, 320, 320), self.rabbit)
         p.drawPixmap(QRect(50, 50, 100, 150), self.drone)
         p.drawPixmap(QRect(200, 150, 80, 80), self.logo)
+        p.drawPixmap(QRect(50, 200, 100, 150), self.noot)
  
         p.setPen(QColor(0, 255, 0))
         p.setBrush(QColor(0, 255, 0))
