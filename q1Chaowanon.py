@@ -8,27 +8,22 @@ class Simple_drawing_window(QWidget):
         QWidget.__init__(self, None)
         self.setWindowTitle("Simple Drawing")
         self.rabbit = QPixmap("images/rabbit.png")
+        self.drone = QPixmap("images/drone.jpeg")
+        self.logo = QPixmap("images/logo.jpg")
  
     def paintEvent(self, e):
         p = QPainter()
         p.begin(self)
  
-        p.setPen(QColor(0, 0, 0))
-        p.setBrush(QColor(0, 127, 0))
-        p.drawPolygon([
-            QPoint( 70, 100), QPoint(100, 110),
-            QPoint(130, 100), QPoint(100, 150),
-        ])
- 
-        p.setPen(QColor(255, 127, 0))
-        p.setBrush(QColor(255, 127, 0))
-        p.drawPie(50, 150, 100, 100, 0, 180 * 16)
-        
-        p.drawPolygon(
-            [QPoint( 50, 200), QPoint(150, 200), QPoint(100, 400),]
-            )
- 
         p.drawPixmap(QRect(200, 100, 320, 320), self.rabbit)
+        p.drawPixmap(QRect(50, 50, 100, 150), self.drone)
+        p.drawPixmap(QRect(200, 150, 80, 80), self.logo)
+ 
+        p.setPen(QColor(0, 255, 0))
+        p.setBrush(QColor(0, 255, 0))
+        p.setOpacity(0.2)
+        p.drawPie(190, 140, 100, 100, 0, 180 * 16 * 2)
+        
         p.end()
         
     def Simple_drawing_window1(self):
