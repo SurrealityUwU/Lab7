@@ -22,7 +22,7 @@ class Simple_drawing_window(QWidget):
         p.setPen(QColor(0, 255, 0))
         p.setBrush(QColor(0, 255, 0))
         p.setOpacity(0.2)
-        p.drawPie(190, 140, 100, 100, 0, 180 * 16 * 2)
+        p.drawPie(190, 140, 100, 100, 0, 180 * 32)
         
         p.end()
         
