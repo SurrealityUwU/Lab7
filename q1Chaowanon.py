@@ -30,6 +30,9 @@ class Simple_drawing_window(QWidget):
  
         p.drawPixmap(QRect(200, 100, 320, 320), self.rabbit)
         p.end()
+        
+    def Simple_drawing_window1(self):
+        pass
  
 def main():
     app = QApplication(sys.argv)
@@ -37,7 +40,7 @@ def main():
     w = Simple_drawing_window()
     w.show()
 
-    return app.exec_()
+    return app.exec()
 
 if __name__ == "__main__":
     sys.exit(main())
