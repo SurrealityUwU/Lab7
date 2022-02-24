@@ -15,6 +15,8 @@ class Paint(QMainWindow):
 
         self.clearButton = QPushButton("Clear", self)
         self.clearButton.clicked.connect(self.clear)
+        self.clearButton.move(250,500)
+        self.clearButton.setMinimumWidth(300)
         self.layout.addWidget(self.clearButton)
 
     def mousePressEvent(self, event):
