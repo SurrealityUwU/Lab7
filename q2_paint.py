@@ -6,6 +6,7 @@ from PySide6.QtGui import *
 class Paint(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.layout = QVBoxLayout(self)
 
         self.setGeometry(100, 100, 800, 600)
         self.image = QImage(self.size(), QImage.Format_RGB32)
@@ -14,6 +15,7 @@ class Paint(QMainWindow):
 
         self.clearButton = QPushButton("Clear", self)
         self.clearButton.clicked.connect(self.clear)
+        self.layout.addWidget(self.clearButton)
 
     def mousePressEvent(self, event):
         self.last_x, self.last_y = event.x(), event.y()
